@@ -35,3 +35,6 @@ Discord (BlissDNS section): <br>
 Reddit (comment in the megathread): https://www.reddit.com/r/BlissDNS/ <br>
 Issue tracker here: https://github.com/BlissDNS/info/issues <br>
 Or via email: info@blissdns.net
+# DONATE!
+This project is going to grow and expand with the help of donations! Right now we are doing everything out of pocket ourselves, and all donations will help cover the server cost, and help us expand to run more servers internationally!
+## Patreon: https://www.patreon.com/blissdns
