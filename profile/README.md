@@ -13,7 +13,7 @@ tls://us1.blissdns.net <br>
 https://us1.blissdns.net/dns-query <br>
 quic://us1.blissdns.net <br>
 ### Plain DNS/Pi-hole
-If you are not using a service or device that takes advantage of encrypted DNS (Like Pi-hole or your router/game console/tv), you can send DNS queries our way at the following IP: <br>
+If you are not using a service or device that takes advantage of encrypted DNS (Like Pi-hole or your router/game console/tv), you can send DNS queries our way at the following IP: <br><br>
 IPv4: 173.255.201.254 <br>
 IPv6: 2600:3c00::f03c:93ff:feca:d2be <br>
 <br>
