@@ -31,7 +31,7 @@ We do collect non-anonymized logs for 24 hours, after which they're gone. Do kno
 We hate ads, and trackers, and all the nasty crap you deal with online. We see people struggle to setup local adblocking or want adblocking on the go, and we do too, so instead of running personal VPN's and guiding others to set them up, we decided why not create a public server setup how we want, and let other people use it too, and thus BlissDNS was born.
 # Contact us!
 There are a few ways to contact us either with questions, report an ad domain that isn't blocked, or report us blocking a domain we shouldn't! <br>
-Discord (BlissDNS section): <br>
+Discord (BlissDNS section): https://discord.gg/VzThBmB
 Reddit (comment in the megathread): https://www.reddit.com/r/BlissDNS/ <br>
 Issue tracker here: https://github.com/BlissDNS/info/issues <br>
 Or via email: info@blissdns.net
