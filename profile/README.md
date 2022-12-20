@@ -12,6 +12,8 @@ If you use AdGuard Home and want to use us as your upstream DNS servers, you can
 tls://us1.blissdns.net <br>
 https://us1.blissdns.net/dns-query <br>
 quic://us1.blissdns.net <br>
+### Firefox or Chrome(ium) secure/encrypted DNS
+https://us1.blissdns.net/dns-query
 ### Plain DNS/Pi-hole
 If you are not using a service or device that takes advantage of encrypted DNS (Like Pi-hole or your router/game console/tv), you can send DNS queries our way at the following IP: <br><br>
 IPv4: 173.255.201.254 <br>
