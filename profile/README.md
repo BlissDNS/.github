@@ -29,3 +29,9 @@ https://raw.githubusercontent.com/CipherOps/AdList/main/Blocklist <br>
 We do collect non-anonymized logs for 24 hours, after which they're gone. Do know we only see what domain an IP looks up, we can see you go to google.com or reddit.com but nothing further than that, that information isn't transmitted via DNS so we are blissfully unaware of what you're doing, just what sites you visit. We do this because even in private beta we have to deal with spam bots, and with AdGuard Home we can see obvious signs of spam, see the IP doing it, and block it from the service, we maintain a public list of blocked IP's on our project in badips.txt. 
 ### Why are you doing this?
 We hate ads, and trackers, and all the nasty crap you deal with online. We see people struggle to setup local adblocking or want adblocking on the go, and we do too, so instead of running personal VPN's and guiding others to set them up, we decided why not create a public server setup how we want, and let other people use it too, and thus BlissDNS was born.
+# Contact us!
+There are a few ways to contact us either with questions, report an ad domain that isn't blocked, or report us blocking a domain we shouldn't! <br>
+Discord (BlissDNS section): <br>
+Reddit (comment in the megathread): https://www.reddit.com/r/BlissDNS/ <br>
+Issue tracker here: https://github.com/BlissDNS/info/issues <br>
+Or via email: info@blissdns.net
