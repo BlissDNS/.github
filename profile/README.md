@@ -10,5 +10,5 @@ If you use Ad Guard Home and want to use us as your upstream DNS servers, you ca
 tls://us1.blissdns.net <br>
 https://us1.blissdns.net/dns-query <br>
 quic://us1.blissdns.net <br><br>
-If you are not using a service or device that takes advantage of encrypted DNS, you can send DNS queries our way at the following IP <br>
+If you are not using a service or device that takes advantage of encrypted DNS (Like Pi-hole or your router/game console/tv), you can send DNS queries our way at the following IP <br>
 173.255.201.254 <br>
