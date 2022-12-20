@@ -8,7 +8,7 @@ We also support Android's Private DNS feature with the same URL below! <br>
 ### Our domain
 DoH/DoT/DoQ domain: us1.blissdns.net <br>
 ### AdGuard Home/Similar
-If you use AdGuard Home and want to use us as your upstream DNS servers, you can do so with the following as your upstream DNS! <br>
+If you use AdGuard Home and want to use us as your upstream DNS servers, you can do so with the following as your upstream DNS! <br><br>
 tls://us1.blissdns.net <br>
 https://us1.blissdns.net/dns-query <br>
 quic://us1.blissdns.net <br>
