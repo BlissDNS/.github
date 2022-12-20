@@ -7,6 +7,8 @@ Easy, we have support for encrypted DNS with DNS-over-HTTPS, DNS-over-TLS, and D
 We also support Android's Private DNS feature with the same URL below! <br>
 ### Our domain
 DoH/DoT/DoQ domain: us1.blissdns.net <br>
+### Android Private DNS
+us1.blissdns.net
 ### AdGuard Home/Similar
 If you use AdGuard Home and want to use us as your upstream DNS servers, you can do so with the following as your upstream DNS! <br><br>
 tls://us1.blissdns.net <br>
