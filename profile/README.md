@@ -29,6 +29,8 @@ Well, our goal is to stay problem free 100% of the time while maximizing our eff
 https://abp.oisd.nl/ <br>
 https://github.com/badmojr/1Hosts/raw/master/Lite/adblock.txt <br>
 https://raw.githubusercontent.com/CipherOps/AdList/main/Blocklist <br>
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt <br>
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/fake.txt <br>
 ### How is my information safe?
 We do collect non-anonymized logs for 24 hours, after which they're gone. Do know we only see what domain an IP looks up, we can see you go to google.com or reddit.com but nothing further than that, that information isn't transmitted via DNS so we are blissfully unaware of what you're doing, just what sites you visit. We do this because even in private beta we have to deal with spam bots, and with AdGuard Home we can see obvious signs of spam, see the IP doing it, and block it from the service, we maintain a public list of blocked IP's on our project here: https://github.com/BlissDNS/info/blob/main/badips.txt 
 ### Why are you doing this?
