@@ -16,23 +16,27 @@ quic://us1.blissdns.net <br>
 ### Firefox or Chrome(ium) secure/encrypted DNS
 https://us1.blissdns.net/dns-query
 ### Plain DNS/Pi-hole
-If you are not using a service or device that takes advantage of encrypted DNS (Like Pi-hole or your router/game console/tv), you can send DNS queries our way at the following IP: <br><br>
+If you are not using a service or device that takes advantage of encrypted DNS (Like Pi-hole or your router/game console/tv), you can send DNS queries our way at the following IPs: <br><br>
 IPv4: 173.255.201.254 <br>
 IPv6: 2600:3c00::f03c:93ff:feca:d2be <br>
 <br>
 # The details!
 What exactly we do, what do we use, how is your information stored/kept/removed and why we do what we do.
 ### What do you do exactly.
-We run AdGuard Home on a Linode server that utilizes Unbound for DNS resolution, we use Let's Encrypt and Certbot to keep our domain up to date with a valid SSL. <br>
+We run AdGuard Home on a Linode server that utilizes Unbound for DNS resolution, we use Let's Encrypt and Certbot to keep our domain up to date with valid TLS. <br>
 ### What blocklists do you use?
 Well, our goal is to stay problem free 100% of the time while maximizing our effectivness. The lists we use are as follows: <br>
-https://abp.oisd.nl/ <br>
-https://github.com/badmojr/1Hosts/raw/master/Lite/adblock.txt <br>
-https://raw.githubusercontent.com/CipherOps/AdList/main/Blocklist <br>
-https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt <br>
 https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/fake.txt <br>
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/multi.txt <br>
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.tiktok.txt <br>
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif-ips.txt <br>
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt <br>
+https://raw.githubusercontent.com/PoorPocketsMcNewHold/steamscamsites/master/steamscamsite.txt <br>
+https://raw.githubusercontent.com/sjhgvr/oisd/main/oisd_big.txt <br>
 ### How is my information safe?
-We do collect non-anonymized logs for 24 hours, after which they're gone. We only see what domain an IP looks up. We can see you go to google.com or reddit.com but nothing further than that, that information isn't transmitted via DNS so we are blissfully unaware of what you're doing, just what sites you visit. We do this because even in private beta we have to deal with spam bots, and with AdGuard Home we can see obvious signs of spam, see the IP doing it, and block it from the service, we maintain a public list of blocked IP's on our project here: https://github.com/BlissDNS/info/blob/main/badips.txt 
+We collect non-anonymized logs over a rolling 24 hour window in order to combat abuse. Rest assured, we are only able to see what domains you visit by the very nature of DNS. What you do on the site is between you and them! Requests from abusive IP addresses or requests for abusive domains are dropped (no response). The list of what IPs and domains we block are available below: <br>
+https://github.com/BlissDNS/info/blob/main/badips.txt <br>
+https://github.com/BlissDNS/info/blob/main/baddomains.txt
 ### Why are you doing this?
 We hate ads, and trackers, and all the nasty crap you deal with online. We see people struggle to setup local adblocking or want adblocking on the go, and we do too, so instead of running personal VPN's and guiding others to set them up, we decided why not create a public server setup how we want, and let other people use it too, and thus BlissDNS was born.
 # Contact us!
