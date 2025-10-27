@@ -23,7 +23,7 @@ IPv6: 2600:3c00::f03c:93ff:feca:d2be <br>
 # The details!
 What exactly we do, what do we use, how is your information stored/kept/removed and why we do what we do.
 ### What do you do exactly.
-We run AdGuard Home on a Linode server that utilizes Unbound for DNS resolution ( [SNDS](https://github.com/semihalev/sdns) as fallback for AdGuard Home soon), we use Let's Encrypt and Certbot to keep our domain up to date with valid TLS. <br>
+We run AdGuard Home on a Linode server that utilizes Unbound for DNS resolution ([SNDS](https://github.com/semihalev/sdns) as fallback for AdGuard Home soon), we use Let's Encrypt and Certbot to keep our domain up to date with valid TLS. <br>
 ### What blocklists do you use?
 Well, our goal is to stay problem free 100% of the time while maximizing our effectivness. The lists we use are as follows: <br>
 https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/fake.txt <br>
