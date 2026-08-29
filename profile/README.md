@@ -26,13 +26,12 @@ What exactly we do, what do we use, how is your information stored/kept/removed 
 We run AdGuard Home on a Linode server that utilizes Unbound for DNS resolution ([SNDS](https://github.com/semihalev/sdns) as fallback for AdGuard Home soon), we use Let's Encrypt and Certbot to keep our domain up to date with valid TLS. <br>
 ### What blocklists do you use?
 Well, our goal is to stay problem free 100% of the time while maximizing our effectivness. The lists we use are as follows: <br>
-https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/fake.txt <br>
-https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/multi.txt <br>
-https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.tiktok.txt <br>
-https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif-ips.txt <br>
-https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt <br>
-https://raw.githubusercontent.com/PoorPocketsMcNewHold/steamscamsites/master/steamscamsite.txt <br>
-https://raw.githubusercontent.com/sjhgvr/oisd/main/oisd_big.txt <br>
+https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/fake.txt <br>
+https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/multi.txt <br>
+https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.tiktok.txt <br>
+https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/tif-ips.txt <br>
+https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/tif.txt <br>
+https://raw.githubusercontent.com/sjhgvr/oisd/refs/heads/main/abp_big.txt <br>
 ### How is my information safe?
 We collect non-anonymized logs over a rolling 24 hour window in order to combat abuse. Rest assured, we are only able to see what domains you visit by the very nature of DNS. What you do on the site is between you and them! Requests from abusive IP addresses or requests for abusive domains are dropped (no response). The list of what IPs and domains we block are available below: <br>
 https://github.com/BlissDNS/info/blob/main/badips.txt <br>
