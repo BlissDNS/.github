@@ -32,7 +32,7 @@ https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.tiktok.t
 https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/tif-ips.txt <br>
 https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/tif.txt <br>
 https://raw.githubusercontent.com/sjhgvr/oisd/refs/heads/main/abp_big.txt <br> <br>
-*We also host mirrors of the lists we use here: https://data.blissdns.net/mirror/*
+*We also host a mirror of the lists we use here: https://data.blissdns.net/mirror/*
 ### How is my information safe?
 We collect non-anonymized logs over a rolling 24 hour window in order to combat abuse. Rest assured, we are only able to see what domains you visit by the very nature of DNS. What you do on the site is between you and them! Requests from abusive IP addresses or requests for abusive domains are dropped (no response). The list of what IPs and domains we block are available below: <br>
 https://github.com/BlissDNS/info/blob/main/badips.txt <br>
