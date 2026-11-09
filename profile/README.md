@@ -1,50 +1,121 @@
-# BlissDNS <br>
-## Ad-Free, Encrypted, and Private DNS service. <br>
-### What do we do? <br>
-We are a public DNS service, free to use, that blocks ads, trackers, malware, and other nasy stuff that slows down or clutters your internet browsing experience. <br>
-### How do I use BlissDNS? <br>
-Easy, we have support for encrypted DNS with DNS-over-HTTPS, DNS-over-TLS, and DNS-over-QUIC. We of course support sending traffic directly to our IP so you can set your router or any device to use us for DNS if it does not support using encryption directly. <br><br>
-### Our domain
-DoH/DoT/DoQ domain: us1.blissdns.net <br>
-### Android Private DNS
+# BlissDNS
+
+Free public DNS that blocks ads, trackers, malware, and other junk, for anyone who wants that on every device without running their own blocker.
+
+Use it encrypted over DNS-over-HTTPS, DNS-over-TLS, or DNS-over-QUIC, or point your router or any device straight at our IPs.
+
+## Quick setup
+
+| Use it with | Address |
+| --- | --- |
+| DNS-over-HTTPS | `https://us1.blissdns.net/dns-query` |
+| DNS-over-TLS | `tls://us1.blissdns.net` |
+| DNS-over-QUIC | `quic://us1.blissdns.net` |
+| Android Private DNS | `us1.blissdns.net` |
+| Plain DNS, IPv4 | `173.255.201.254` |
+| Plain DNS, IPv6 | `2600:3c00::f03c:93ff:feca:d2be` |
+
+### Android
+
+Settings, then Private DNS, then pick "Private DNS provider hostname" and enter:
+
+```
 us1.blissdns.net
-### AdGuard Home/Similar
-If you use AdGuard Home and want to use us as your upstream DNS servers, you can do so with the following as your upstream DNS! <br><br>
-tls://us1.blissdns.net <br>
-https://us1.blissdns.net/dns-query <br>
-quic://us1.blissdns.net <br>
-### Firefox or Chrome(ium) secure/encrypted DNS
+```
+
+The exact menu path depends on your phone, but it's usually under Network or Connections.
+
+### Firefox, Chrome, or any Chromium browser
+
+Turn on secure DNS (Firefox calls it DNS over HTTPS), choose a custom provider, and enter:
+
+```
 https://us1.blissdns.net/dns-query
-### Plain DNS/Pi-hole
-If you are not using a service or device that takes advantage of encrypted DNS (Like Pi-hole or your router/game console/tv), you can send DNS queries our way at the following IPs: <br><br>
-IPv4: 173.255.201.254 <br>
-IPv6: 2600:3c00::f03c:93ff:feca:d2be <br>
-<br>
-# The details!
-What exactly we do, what do we use, how is your information stored/kept/removed and why we do what we do.
-### What do you do exactly.
-We run AdGuard Home on a Linode server that utilizes Unbound for DNS resolution ([SNDS](https://github.com/semihalev/sdns) as fallback for AdGuard Home soon), we use Let's Encrypt and Certbot to keep our domain up to date with valid TLS. <br>
-### What blocklists do you use?
-Well, our goal is to stay problem free 100% of the time while maximizing our effectivness. The lists we use are as follows: <br>
-https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/fake.txt <br>
-https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/multi.txt <br>
-https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.tiktok.txt <br>
-https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/tif-ips.txt <br>
-https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/tif.txt <br>
-https://raw.githubusercontent.com/sjhgvr/oisd/refs/heads/main/abp_big.txt <br> <br>
-*We also host a mirror of the lists we use here: https://data.blissdns.net/mirror/*
-### How is my information safe?
-We collect non-anonymized logs over a rolling 24 hour window in order to combat abuse. Rest assured, we are only able to see what domains you visit by the very nature of DNS. What you do on the site is between you and them! Requests from abusive IP addresses or requests for abusive domains are dropped (no response). The list of what IPs and domains we block are available below: <br>
-https://github.com/BlissDNS/info/blob/main/badips.txt <br>
-https://github.com/BlissDNS/info/blob/main/baddomains.txt
-### Why are you doing this?
-We hate ads, and trackers, and all the nasty crap you deal with online. We see people struggle to setup local adblocking or want adblocking on the go, and we do too, so instead of running personal VPN's and guiding others to set them up, we decided why not create a public server setup how we want, and let other people use it too, and thus BlissDNS was born.
-# Contact us!
-There are a few ways to contact us either with questions, report an ad domain that isn't blocked, or report us blocking a domain we shouldn't! <br>
-Discord: https://discord.gg/Fk5VqxPD6U <br>
-Reddit (comment in the megathread): https://www.reddit.com/r/BlissDNS/ <br>
-Issue tracker here: https://github.com/BlissDNS/info/issues <br>
-Or via email: info@blissdns.net
-# DONATE!
-This project is going to grow and expand with the help of donations! Right now we are doing everything out of pocket ourselves, and all donations will help cover the server cost, and help us expand to run more servers internationally!
-## Patreon: https://www.patreon.com/blissdns
+```
+
+### AdGuard Home or similar
+
+Add these as your upstream DNS servers:
+
+```
+tls://us1.blissdns.net
+https://us1.blissdns.net/dns-query
+quic://us1.blissdns.net
+```
+
+### Routers, Pi-hole, game consoles, TVs
+
+Anything that can't do encrypted DNS can use our IPs directly:
+
+```
+173.255.201.254
+2600:3c00::f03c:93ff:feca:d2be
+```
+
+Plain DNS isn't encrypted, so your ISP can see your lookups. Use one of the encrypted options wherever your device supports it.
+
+## How it works
+
+Everything runs on a Linode server.
+
+```
+Plain DNS (port 53)   ->  dnsdist  ->  AdGuard Home  ->  Unbound
+DoH / DoT / DoQ       ------------->   AdGuard Home  ->  Unbound
+```
+
+- **dnsdist** answers plain DNS on port 53 and filters out abuse before anything else sees it. It only handles plain DNS.
+- **AdGuard Home** does the filtering, and serves DNS-over-HTTPS, DNS-over-TLS, and DNS-over-QUIC directly.
+- **Unbound** does the actual DNS resolution.
+- **[SDNS](https://github.com/semihalev/sdns)** is planned as a fallback resolver for AdGuard Home.
+- **Let's Encrypt** and **Certbot** keep our TLS certificate valid.
+
+### Abuse protection on plain DNS
+
+Open DNS servers get used to attack other people. An attacker fakes their victim's IP, sends small queries, and DNS providers send big answers to the victim. So plain DNS on port 53 has a few rules:
+
+- Queries from IPs on our [block list](https://github.com/BlissDNS/info/blob/main/badips.txt) are dropped with no response.
+- `ANY` queries are dropped. Nothing legitimate needs them.
+- `TXT` and `DNSKEY` queries over UDP get a truncated reply, and your device retries over TCP. That retry happens automatically. A faked IP can't complete a TCP connection, so the attack goes nowhere.
+
+## Blocklists
+
+Our goal is to block as much as possible without breaking anything. We use:
+
+- [HaGeZi Fake](https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/fake.txt)
+- [HaGeZi Multi](https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/multi.txt)
+- [HaGeZi Native TikTok](https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/native.tiktok.txt)
+- [HaGeZi Threat Intelligence Feeds, IPs](https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/tif-ips.txt)
+- [HaGeZi Threat Intelligence Feeds](https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/tif.txt)
+- [OISD Big](https://raw.githubusercontent.com/sjhgvr/oisd/refs/heads/main/abp_big.txt)
+
+We also host a mirror of these lists: https://data.blissdns.net/mirror/
+
+## Privacy
+
+We keep non-anonymized logs over a rolling 24 hour window to fight abuse. After 24 hours, they're gone.
+
+By the nature of DNS, we can see which domains you look up. What you do on those sites is between you and them.
+
+Requests from abusive IPs and requests for abusive domains are dropped with no response. Both lists are public:
+
+- Blocked IPs: https://github.com/BlissDNS/info/blob/main/badips.txt
+- Blocked domains: https://github.com/BlissDNS/info/blob/main/baddomains.txt
+
+## Why we do this
+
+We hate ads, trackers, and all the other crap you deal with online. We watched people struggle to set up local ad blocking, or want it on the go, and we wanted the same thing. So instead of running personal VPNs and walking others through setting them up, we built a public server set up the way we want and let everyone use it. That's BlissDNS.
+
+## Contact
+
+Questions, an ad domain we missed, or a domain we're blocking that we shouldn't be:
+
+- Discord: https://discord.gg/Fk5VqxPD6U
+- Reddit, comment in the megathread: https://www.reddit.com/r/BlissDNS/
+- Issue tracker: https://github.com/BlissDNS/info/issues
+- Email: info@blissdns.net
+
+## Donate
+
+We pay for everything out of pocket right now. Donations cover server costs and help us add servers in more countries.
+
+**Patreon:** https://www.patreon.com/blissdns
