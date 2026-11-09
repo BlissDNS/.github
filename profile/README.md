@@ -59,14 +59,14 @@ Plain DNS isn't encrypted, so your ISP can see your lookups. Use one of the encr
 Everything runs on a Linode server.
 
 ```
-Plain DNS (port 53)   ->  dnsdist  ->  AdGuard Home  ->  Unbound
-DoH / DoT / DoQ       ------------->   AdGuard Home  ->  Unbound
+Plain DNS (port 53)   ->  dnsdist  ->  AdGuard Home  ->  Unbound/PowerDNS
+DoH / DoT / DoQ       ------------->   AdGuard Home  ->  Unbound/PowerDNS
 ```
 
 - **dnsdist** answers plain DNS on port 53 and filters out abuse before anything else sees it. It only handles plain DNS.
 - **AdGuard Home** does the filtering, and serves DNS-over-HTTPS, DNS-over-TLS, and DNS-over-QUIC directly.
 - **Unbound** does the actual DNS resolution.
-- **[SDNS](https://github.com/semihalev/sdns)** is planned as a fallback resolver for AdGuard Home.
+- **PowerDNS Recursor** runs alongside Unbound as a second resolver, so DNS keeps working if either one goes down.
 - **Let's Encrypt** and **Certbot** keep our TLS certificate valid.
 
 ### Abuse protection on plain DNS
